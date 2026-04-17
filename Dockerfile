@@ -1,25 +1,21 @@
 # Dockerfile for SpendAI Backend
-# Used when Render service type is set to "Docker"
+# Place this in the /backend directory so Render finds it when rootDir=backend
 FROM node:20-alpine
 
-# Set working directory
 WORKDIR /app
 
-# Copy backend package files
-COPY backend/package*.json ./
-
-# Install production dependencies only
+# Install dependencies
+COPY package*.json ./
 RUN npm install --omit=dev
 
-# Copy backend source code
-COPY backend/src ./src
+# Copy source
+COPY src ./src
 
-# Expose the port Render will assign
+# Expose port
 EXPOSE 3000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://localhost:${PORT:-3000}/health || exit 1
+    CMD wget --no-verbose --tries=1 --spider http://localhost:${PORT:-3000}/health || exit 1
 
-# Start the server
 CMD ["node", "src/server.js"]

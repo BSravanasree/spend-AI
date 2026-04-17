@@ -1,29 +1,40 @@
 {
-    "name": "spendai-root",
-    "version": "1.0.0",
-    "description": "SpendAI 2.0 - Root Management",
-    "scripts": {
-        "start": "npm --prefix backend start",
-        "dev:backend": "npm --prefix backend run dev",
-        "dev:frontend": "npm --prefix frontend run dev",
-        "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-        "build": "npm run build:frontend",
-        "build:frontend": "cd frontend && npm install && npm run build && cd .. && rm -rf dist && cp -r frontend/dist ./dist",
-        "install:all": "npm install && npm --prefix backend install && npm --prefix frontend install"
-    },
-    "engines": {
-        "node": "20.x"
-    },
-    "dependencies": {
-        "@supabase/supabase-js": "^2.39.0",
-        "axios": "^1.13.3",
-        "cors": "^2.8.5",
-        "dotenv": "^16.3.1",
-        "express": "^4.18.2",
-        "express-rate-limit": "^8.2.1",
-        "uuid": "^9.0.1"
-    },
-    "devDependencies": {
-        "concurrently": "^8.2.2"
-    }
+  "name": "spendai-backend",
+  "version": "1.0.0",
+  "description": "SpendAI Backend - Authentication and API",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
+  },
+  "keywords": [
+    "spendai",
+    "authentication",
+    "api"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "axios": "^1.13.3",
+    "bcrypt": "^6.0.0",
+    "bullmq": "^5.67.3",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "ioredis": "^5.9.2",
+    "resend": "^6.9.2",
+    "uuid": "^9.0.1",
+    "winston": "^3.19.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
 }
