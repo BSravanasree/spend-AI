@@ -1,0 +1,289 @@
+/* ============================================================
+   Budget Settings — SpendAI shell layout
+   ============================================================ */
+
+.settings-grid {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.settings-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+/* Notice Box */
+.notice-box {
+    background: #0d0d12;
+    border: 1px solid #1a1a2e;
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 8px;
+    color: #94a3b8;
+}
+
+.notice-icon {
+    font-size: 1.4rem;
+    padding-top: 2px;
+}
+
+.notice-text h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin: 0 0 4px 0;
+}
+
+.notice-text p {
+    font-size: 12.5px;
+    margin: 0;
+    line-height: 1.5;
+    color: #4b5563;
+}
+
+.notice-text strong {
+    color: #6b7280;
+}
+
+/* Budget Form V2 */
+.budget-form-v2 {
+    margin-top: 4px;
+}
+
+.input-group-v2 {
+    display: flex;
+    align-items: center;
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 8px;
+    padding: 2px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+}
+
+.input-group-v2:focus-within {
+    border-color: #2d2d3d;
+}
+
+.input-group-v2 .pref {
+    padding: 0 8px 0 12px;
+    color: #4b5563;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.input-group-v2 input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 10px 0;
+    color: #e2e8f0;
+    font-size: 15px;
+    outline: none;
+}
+
+.input-group-v2 .btn-primary-v2 {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-right: 2px;
+}
+
+.read-only-hint {
+    font-size: 11px;
+    color: #ef4444;
+    margin-top: 8px;
+    opacity: 0.8;
+}
+
+/* Policy Stack */
+.policy-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: #111;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.policy-item {
+    background: #0e0e0e;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12.5px;
+    color: #6b7280;
+}
+
+.policy-item strong {
+    color: #d1d5db;
+    font-weight: 600;
+}
+
+.policy-item .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.dot.info {
+    background: #6366f1;
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
+}
+
+.dot.warn {
+    background: #f59e0b;
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+.dot.error {
+    background: #ef4444;
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+}
+
+/* Budget List V2 */
+.budget-list-v2 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.budget-row-v2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #151515;
+}
+
+.budget-row-v2:last-child {
+    border-bottom: none;
+}
+
+.budget-row-v2 .info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.budget-row-v2 .name {
+    color: #d1d5db;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.budget-row-v2 .id {
+    font-size: 11px;
+    color: #374151;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.budget-row-v2 .action .input-row {
+    display: flex;
+    align-items: center;
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 7px;
+    padding: 0 2px 0 10px;
+    width: 180px;
+}
+
+.budget-row-v2 .pref {
+    color: #374151;
+    font-size: 14px;
+    margin-right: 4px;
+}
+
+.budget-row-v2 input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 8px 0;
+    color: #e2e8f0;
+    font-size: 13.5px;
+    outline: none;
+    width: 60px;
+}
+
+/* Hide arrows for number input */
+.budget-row-v2 input::-webkit-outer-spin-button,
+.budget-row-v2 input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.btn-save-sm {
+    background: #1e1e2e;
+    border: 1px solid #2d2d4d;
+    color: #a5b4fc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.btn-save-sm:hover {
+    background: #2d2d4d;
+    color: #fff;
+}
+
+/* Dash Msg */
+.dash-msg {
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    animation: slideIn 0.2s ease-out;
+}
+
+.dash-msg.success {
+    background: #062016;
+    border: 1px solid #064e3b;
+    color: #34d399;
+}
+
+.dash-msg.error {
+    background: #2a1111;
+    border: 1px solid #451a1a;
+    color: #f87171;
+}
+
+.msg-close {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.empty-p {
+    text-align: center;
+    padding: 32px;
+    color: #374151;
+    font-size: 13px;
+}
+
+@media (max-width: 900px) {
+    .settings-grid {
+        flex-direction: column;
+    }
+
+    .settings-col {
+        width: 100%;
+    }
+}

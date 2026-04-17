@@ -1,0 +1,387 @@
+/* ============================================================
+   Dashboard — SpendAI shell layout
+   ============================================================ */
+
+/* App Shell */
+.app-shell {
+    display: flex;
+    min-height: 100vh;
+    background: #080808;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.main-content {
+    margin-left: 220px;
+    flex: 1;
+    padding: 28px 32px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Top Bar */
+.topbar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.topbar-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.page-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.page-sub {
+    font-size: 13px;
+    color: #4b5563;
+}
+
+.page-sub strong {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.btn-quick-create {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+}
+
+.btn-quick-create:hover {
+    opacity: 0.88;
+}
+
+.dash-error {
+    background: #1c0a0a;
+    border: 1px solid #3b1010;
+    color: #f87171;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+/* ── Stat Cards ──────────────────────────────────────────── */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.stat-card {
+    background: #111;
+    border: 1px solid #1a1a1a;
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: border-color 0.15s;
+}
+
+.stat-card.clickable {
+    cursor: pointer;
+}
+
+.stat-card.clickable:hover {
+    border-color: #2d2d3d;
+}
+
+.stat-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.stat-trend {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 20px;
+}
+
+.stat-trend.up {
+    background: #0a2218;
+    color: #34d399;
+}
+
+.stat-trend.down {
+    background: #1f0a0a;
+    color: #f87171;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #e2e8f0;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.stat-sub {
+    font-size: 11px;
+    color: #374151;
+    margin-top: 2px;
+}
+
+/* ── Dash Cards ──────────────────────────────────────────── */
+.dash-card {
+    background: #0e0e0e;
+    border: 1px solid #1a1a1a;
+    border-radius: 12px;
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.dash-card.flex-1 {
+    flex: 1;
+    min-width: 0;
+}
+
+.dash-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.dash-card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #d1d5db;
+    margin: 0;
+}
+
+.dash-card-sub {
+    font-size: 12px;
+    color: #374151;
+    margin: 3px 0 0;
+}
+
+/* Range Tabs */
+.range-tabs {
+    display: flex;
+    gap: 4px;
+}
+
+.range-tab {
+    padding: 5px 12px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid #1f1f1f;
+    background: transparent;
+    color: #4b5563;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.range-tab:hover {
+    background: #151515;
+    color: #9ca3af;
+}
+
+.range-tab.active {
+    background: #1e1e2e;
+    border-color: #2d2d4d;
+    color: #a5b4fc;
+}
+
+/* Chart */
+.chart-wrap {
+    height: 280px;
+}
+
+/* Empty state */
+.empty-state {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #374151;
+    text-align: center;
+}
+
+.empty-state.small {
+    font-size: 13px;
+    height: 180px;
+}
+
+.empty-icon {
+    font-size: 2.4rem;
+}
+
+.empty-state p {
+    font-size: 13px;
+}
+
+.btn-primary-sm {
+    margin-top: 4px;
+    padding: 7px 16px;
+    background: #6366f1;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.btn-primary-sm:hover {
+    opacity: 0.85;
+}
+
+/* Bottom row */
+.dash-row {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+/* Ghost button */
+.btn-ghost-sm {
+    background: none;
+    border: none;
+    color: #6b7280;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: color 0.15s, background 0.15s;
+    white-space: nowrap;
+    align-self: center;
+}
+
+.btn-ghost-sm:hover {
+    color: #e2e8f0;
+    background: #151515;
+}
+
+/* Table */
+.table-scroll {
+    overflow-x: auto;
+}
+
+.dash-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+}
+
+.dash-table th {
+    text-align: left;
+    padding: 7px 10px;
+    color: #374151;
+    font-weight: 500;
+    border-bottom: 1px solid #1a1a1a;
+    white-space: nowrap;
+}
+
+.dash-table td {
+    padding: 9px 10px;
+    color: #9ca3af;
+    border-bottom: 1px solid #111;
+    vertical-align: middle;
+}
+
+.dash-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.dash-table tbody tr:hover td {
+    background: #0a0a0a;
+}
+
+.td-name {
+    color: #d1d5db;
+    font-weight: 500;
+}
+
+.td-num {
+    color: #6b7280;
+}
+
+.td-mono {
+    font-family: 'JetBrains Mono', monospace;
+    color: #a5b4fc;
+}
+
+.empty-td {
+    text-align: center;
+    color: #374151;
+    padding: 24px !important;
+}
+
+.btn-row {
+    background: #151515;
+    border: 1px solid #222;
+    color: #6b7280;
+    border-radius: 6px;
+    padding: 4px 9px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.btn-row:hover {
+    color: #e2e8f0;
+    border-color: #333;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dash-row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        padding: 16px;
+    }
+
+    .stat-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .range-tabs {
+        display: none;
+    }
+}

@@ -1,0 +1,108 @@
+/* ============================================================
+   Alerts Feed — SpendAI shell layout
+   ============================================================ */
+
+.alert-feed-v2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: #111;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.alert-row-v2 {
+    background: #0e0e0e;
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 240px 1fr 140px;
+    align-items: center;
+    gap: 20px;
+    transition: background 0.15s;
+    border-bottom: 1px solid #151515;
+}
+
+.alert-row-v2:last-child {
+    border-bottom: none;
+}
+
+.alert-row-v2:hover {
+    background: #121212;
+}
+
+.alert-meta-v2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.threshold-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Dot colors based on severity */
+.t-50 {
+    background: #6366f1;
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
+}
+
+.t-75 {
+    background: #8b5cf6;
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
+}
+
+.t-90 {
+    background: #f59e0b;
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+.t-100 {
+    background: #ef4444;
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
+}
+
+.alert-info-v2 {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.alert-title-v2 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.alert-sub-v2 {
+    font-size: 11px;
+    color: #4b5563;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.alert-body-v2 {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.alert-time-v2 {
+    font-size: 11.5px;
+    color: #374151;
+    text-align: right;
+    font-weight: 500;
+}
+
+@media (max-width: 900px) {
+    .alert-row-v2 {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .alert-time-v2 {
+        text-align: left;
+    }
+}
